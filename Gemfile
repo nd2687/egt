@@ -19,3 +19,6 @@ gem 'spring',        group: :development
 gem "angular-gem", '~> 1.2.1'
 
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
