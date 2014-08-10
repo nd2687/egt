@@ -22,3 +22,5 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+
+gem 'annotate', :git => 'https://github.com/ctran/annotate_models'
