@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809170139) do
+ActiveRecord::Schema.define(version: 20140810150025) do
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20140809170139) do
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
   create_table "words", force: true do |t|
-    t.string   "japanese",   null: false
     t.string   "english",    null: false
+    t.string   "japanese",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
