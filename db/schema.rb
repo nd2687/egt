@@ -36,10 +36,13 @@ ActiveRecord::Schema.define(version: 20140810150025) do
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
   create_table "words", force: true do |t|
+    t.integer  "user_id",    null: false
     t.string   "english",    null: false
     t.string   "japanese",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "words", ["user_id"], name: "index_words_on_user_id", using: :btree
 
 end

@@ -1,11 +1,13 @@
 class CreateWords < ActiveRecord::Migration
   def change
     create_table :words do |t|
-      t.references :devise_create_users, index: true
+      t.references :user, null: false
       t.string :english, null: false
       t.string :japanese, null: false
 
       t.timestamps
     end
+
+    add_index :words, :user_id
   end
 end
