@@ -2,14 +2,14 @@ $(function (){
   $("li.word").hover(function (){
     var japanese = $(this).children('.japanese');
     var english = $(this).children('.english');
-    japanese.fadeOut("");
-    english.fadeIn("");
+    japanese.stop().hide("");
+    english.stop().show("");
   },
     function (){
       var japanese = $(this).children('.japanese');
       var english = $(this).children('.english');
-      japanese.fadeIn("");
-      english.fadeOut("");
+      japanese.stop().show("");
+      english.stop().hide("");
     }
   );
 })
