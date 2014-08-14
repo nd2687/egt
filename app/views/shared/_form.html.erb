@@ -1,0 +1,7 @@
+<%= form_for(:word, :url => { :controller => :words, :action => :create,
+  :method => :post }) do |f| %>
+    <%= f.text_field :japanese %><br>
+    <%= f.text_field :english %><br>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.submit "go" %>
+<% end %>

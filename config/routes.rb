@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  resources :words
+
   devise_for :users, :controllers => {
     :sessions => "users/sessions",
     :registrations => "users/registrations",
