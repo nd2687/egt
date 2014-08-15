@@ -5,18 +5,12 @@ class WordsController < ApplicationController
   end
 
   def create
-    @word = Word.new new_word
-    @word.save
+    @word = Word.new(user_id: params['user_id'],
+                     japanese: params[:japanese], english: params[:english])
+    render json: [ @word.japanese, @word.english ] if @word.save!
   end
 
   def delete
 
-  end
-
-  private
-  def new_word
-    params.require(:word).permit(
-      :japanese, :english, :user_id
-    )
   end
 end

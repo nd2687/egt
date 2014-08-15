@@ -1,7 +1,8 @@
 <%= form_for(:word, :url => { :controller => :words, :action => :create,
-  :method => :post }) do |f| %>
-    <%= f.text_field :japanese %><br>
-    <%= f.text_field :english %><br>
+  :method => :post, remote: true }) do |f| %>
+    <%= f.text_field :japanese, placeholder: "Japanese" %><br>
+    <%= f.text_field :english, placeholder: "English" %><br>
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.submit "go" %>
 <% end %>
+
+<button id="new_word" data-user_id="<%= current_user.id %>">submit</button>
