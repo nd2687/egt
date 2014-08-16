@@ -1,4 +1,5 @@
 <div class="nav">
+
   <%= form_for(:word, :url => { :controller => :words, :action => :create,
                :method => :post }, remote: true, class: "clearfix" ) do |f| %>
       <%= f.text_field :english, placeholder: "English" %><br>
@@ -7,4 +8,6 @@
   <% end %>
 
   <button id="new_word" data-user_id="<%= current_user.id %>">submit</button>
+
+  <p class="navMessage">英単語追加</p>
 </div>
