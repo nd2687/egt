@@ -6,8 +6,8 @@ class WordsController < ApplicationController
 
   def create
     @word = Word.new(user_id: params['user_id'],
-                     japanese: params[:japanese], english: params[:english])
-    render json: [ @word.japanese, @word.english ] if @word.save!
+                     english: params[:english], japanese: params[:japanese])
+    render json: [ @word.english, @word.japanese ] if @word.save!
   end
 
   def delete

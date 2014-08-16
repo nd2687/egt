@@ -1,7 +1,7 @@
 <%= form_for(:word, :url => { :controller => :words, :action => :create,
   :method => :post, remote: true }) do |f| %>
-    <%= f.text_field :japanese, placeholder: "Japanese" %><br>
     <%= f.text_field :english, placeholder: "English" %><br>
+    <%= f.text_field :japanese, placeholder: "日本語" %><br>
     <%= f.hidden_field :user_id, value: current_user.id %>
 <% end %>
 
