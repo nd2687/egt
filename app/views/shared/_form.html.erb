@@ -1,8 +1,10 @@
-<%= form_for(:word, :url => { :controller => :words, :action => :create,
-  :method => :post, remote: true }) do |f| %>
-    <%= f.text_field :english, placeholder: "English" %><br>
-    <%= f.text_field :japanese, placeholder: "日本語" %><br>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-<% end %>
+<div class="nav">
+  <%= form_for(:word, :url => { :controller => :words, :action => :create,
+               :method => :post }, remote: true, class: "clearfix" ) do |f| %>
+      <%= f.text_field :english, placeholder: "English" %><br>
+      <%= f.text_field :japanese, placeholder: "日本語" %><br>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+  <% end %>
 
-<button id="new_word" data-user_id="<%= current_user.id %>">submit</button>
+  <button id="new_word" data-user_id="<%= current_user.id %>">submit</button>
+</div>
