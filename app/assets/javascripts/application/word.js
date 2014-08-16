@@ -27,13 +27,14 @@ $(function (){
       type: 'POST',
       data: params,
       success: function(words){
+        $('html,body').animate({ scrollTop: 0 }, 'fast');
         var list = $('<li class="word" style="display:none;">')
         var nesting = list
           .append('<div class="english" style="display:none;" id="ajax_english">' + words[0] + '</div>')
           .append('<div class="japanese" style="display:none;">' + words[1] + '</div>');
         $('ul#words').prepend(nesting);
-        list.fadeIn('slow');
-        $('div#ajax_english').slideDown('slow');
+        list.slideDown();
+        $('div#ajax_english').slideDown(1100);
         list.hover(function(){
           var english = $(this).children('.english');
           var japanese = $(this).children('.japanese');
