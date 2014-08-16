@@ -1,0 +1,17 @@
+.nav form {
+  width: 200px;
+  height: 55px;
+  float: left;
+}
+#new_word {
+  height: 55px;
+  width:  100px;
+  font-family:Arial, sans-serif;
+  font-size:1.2em;
+  text-transform:uppercase;
+  font-weight:bold;
+  cursor:pointer;
+}
+input:focus {
+  border:solid 2px #7ba3d3;
+}

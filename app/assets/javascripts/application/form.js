@@ -1,7 +1,15 @@
 $(function() {
+  $('#new_word').hover(
+    function (){
+      $(this).css('cursor', 'pointer').css('color', '#5ac86b');
+    },
+    function (){
+      $(this).css('color', '');
+    }
+  );
   var nav = $('.nav');
   //表示位置
-  var navTop = nav.offset().top+500;
+  var navTop = nav.offset().top+170;
   //ナビゲーションの高さ（シャドウの分だけ足してます）
   var navHeight = nav.height()+10;
   var showFlag = false;
@@ -25,4 +33,19 @@ $(function() {
       }
     }
   });
+
+  $('div.nav').hover( function (){
+    if (showFlag == false) {
+        showFlag = true;
+        nav
+    .addClass('fixed')
+    .stop().animate({'top' : '0px'}, 200)
+    }
+  },
+ function (){
+   showFlag = false;
+   nav.stop().animate({'top' : -navHeight+'px'}, 200, function(){
+     nav.removeClass('fixed');
+   });
+ });
 });

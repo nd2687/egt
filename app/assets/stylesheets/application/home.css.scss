@@ -13,12 +13,11 @@ li.word {
   }
 }
 .nav {
-  margin-left: 20px;
-  width: 300px;
-}
-.fixed {
+  padding: 20px;
+  background: #d2f0e4;
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
 }
