@@ -1,0 +1,12 @@
+<ul id="words">
+<% @words.each do |word| %>
+  <li class="word">
+    <div class="english">
+      <%= word.english %>
+    </div>
+    <div class="japanese" style="display:none;">
+      <%= word.japanese %>
+    </div>
+  </li>
+<% end %>
+</ul>

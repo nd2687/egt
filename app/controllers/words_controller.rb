@@ -10,6 +10,10 @@ class WordsController < ApplicationController
     render json: [ @word.english, @word.japanese ] if @word.save!
   end
 
+  def reverse
+    @words = current_user.words.all.order(:updated_at).reverse_order
+  end
+
   def delete
 
   end

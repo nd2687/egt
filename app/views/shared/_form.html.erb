@@ -13,7 +13,15 @@
    ここにCompleコンテンツ
   </div>
 
-  <div class="sortTag">登録順(昇順) | 降順 | 月別 | アルファベット順 | 日本語 | COMPLETE</div>
+  <div class="sortTag">
+    <%= link_to "登録(昇順)", :root %> |
+    <%= link_to "降順", reverse_path %> |
+    <%= link_to "月別", "#" %> |
+    <%= link_to "アルファベット順", "#" %> |
+    <%= link_to "日本語", "#" %> |
+    <%= link_to "COMPLETE", "#" %> |
+    <%= link_to "EDIT", "#" %>
+  </div>
 </div>
 
 <div class="navFirst">
