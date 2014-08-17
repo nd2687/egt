@@ -34,6 +34,8 @@ $(function (){
           .append('<div class="japanese" style="display:none;">' + words[1] + '</div>');
         $('ul#words').prepend(nesting);
         list.slideDown();
+        $('input#word_english').val('');
+        $('input#word_japanese').val('');
         $('div#ajax_english').slideDown(1100);
         list.hover(function(){
           var english = $(this).children('.english');
