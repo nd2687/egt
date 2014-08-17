@@ -1,3 +1,16 @@
 <%= render 'shared/form.html.erb' %>
 
-<%= render 'shared/word_all.html.erb' %>
+<div id="loadArea"></div>
+
+<ul id="wordsUp">
+<% @words.each do |word| %>
+  <li class="word">
+    <div class="english">
+      <%= word.english %>
+    </div>
+    <div class="japanese" style="display:none;">
+      <%= word.japanese %>
+    </div>
+  </li>
+<% end %>
+</ul>
