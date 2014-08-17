@@ -1,7 +1,7 @@
 .nav form {
+  float: left;
   width: 200px;
   height: 55px;
-  float: left;
 }
 .nav form {
   display: none;
@@ -10,6 +10,7 @@
   display: none;
 }
 #new_word {
+  float: left;
   height: 55px;
   width:  100px;
   font-family:Arial, sans-serif;
@@ -20,4 +21,14 @@
 }
 input:focus {
   border:solid 2px #7ba3d3;
+}
+div.sortTag {
+  display: none;
+  margin: 10px 20px 0;
+}
+div.boxComplete {
+  float: left;
+  width: 300px;
+  height: 55px;
+  margin: 10px 20px;
 }

@@ -21,3 +21,11 @@ li.word {
   right: 0;
   width: 100%;
 }
+.navFirst {
+  position: fixed;
+  top: 0;
+  .navMessage {
+    padding: 0;
+    margin: 0;
+  }
+}

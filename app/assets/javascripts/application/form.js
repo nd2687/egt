@@ -37,6 +37,7 @@ $(function() {
   $('div.nav').hover( function (){
     $('div.nav form').stop().fadeIn('slow');
     $('div.nav button').stop().fadeIn('slow');
+    $('div.sortTag').stop().fadeIn('slow');
     if (showFlag == false) {
         showFlag = true;
         nav
@@ -47,6 +48,7 @@ $(function() {
  function (){
    $('div.nav form').stop().fadeOut('slow');
    $('div.nav button').stop().fadeOut('slow');
+   $('div.sortTag').stop().fadeOut('slow');
    showFlag = false;
    nav.stop().animate({'top' : -navHeight+'px'}, 500, function(){
      nav.removeClass('fixed');
