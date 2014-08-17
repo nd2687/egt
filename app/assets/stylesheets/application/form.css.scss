@@ -24,8 +24,10 @@ input:focus {
   border:solid 2px #7ba3d3;
 }
 div.sortTag {
+  float: left;
   display: none;
-  margin: 10px 20px 0;
+  width: 500px;
+  height: 55px;
 }
 div.boxComplete {
   float: left;

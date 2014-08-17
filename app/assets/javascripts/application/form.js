@@ -38,6 +38,8 @@ $(function() {
     $('div.nav form').stop().fadeIn('slow');
     $('div.nav button').stop().fadeIn('slow');
     $('div.sortTag').stop().fadeIn('slow');
+    $('div.navFirst').stop().fadeOut('slow');
+    $('div.completeCount').stop().fadeOut('slow');
     if (showFlag == false) {
         showFlag = true;
         nav
@@ -49,6 +51,8 @@ $(function() {
    $('div.nav form').stop().fadeOut('slow');
    $('div.nav button').stop().fadeOut('slow');
    $('div.sortTag').stop().fadeOut('slow');
+   $('div.navFirst').stop().fadeIn('slow');
+   $('div.completeCount').stop().fadeIn('slow');
    showFlag = false;
    nav.stop().animate({'top' : -navHeight+'px'}, 500, function(){
      nav.removeClass('fixed');
