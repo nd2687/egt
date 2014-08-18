@@ -1,19 +1,20 @@
 $(function (){
-  $("li.word").hover(function (){
-    var english = $(this).children('.english');
-    var japanese = $(this).children('.japanese');
-    $(this).css('cursor', 'pointer').css('background', '#a3d57c');
-    english.stop().slideUp();
-    japanese.stop().slideDown();
-  },
-    function (){
+  $("body").on({
+    'mouseenter':function(){
+      var english = $(this).children('.english');
+      var japanese = $(this).children('.japanese');
+      $(this).css('cursor', 'pointer').css('background', '#a3d57c');
+      english.stop().slideUp();
+      japanese.stop().slideDown();
+    },
+    'mouseleave':function(){
       var english = $(this).children('.english');
       var japanese = $(this).children('.japanese');
       $(this).css('cursor', 'pointer').css('background', '');
       english.stop().slideDown();
       japanese.stop().slideUp();
     }
-  );
+  }, 'li.word');
 
   $('#new_word').on("click", function(){
     var user_id = $('button#new_word').attr("data-user_id");

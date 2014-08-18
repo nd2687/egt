@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   root 'home#index'
-  get 'reverse', to: "home#reverse", as: "reverse"
 
   resources :words
 

@@ -1,11 +1,18 @@
 $(function (){
-  $("button#reverseSort").on('click', function(){
-    $("ul#wordsUp").fadeOut('fast');
-    $('#loadArea').load("/reverse/ ul#wordsDown");
+  //$("button#reverseSort").on('click', function(){
+  //  $("ul").fadeOut('fast');
+  //  $('#loadArea').load("?sort_type=reverse ul");
+  //});
+
+  $("button.sortButton").on('click', function(){
+    var sortType = $(this).attr('data-sort-type');
+    $("ul").fadeOut('fast');
+    $('#loadArea').load("?sort_type="+sortType+" ul");
   });
 
-  $("button#normalSort").on('click', function(){
-    $("ul#wordsDown").fadeOut('fast');
-    $('#loadArea').load("/ ul#wordsUp");
-  });
+  //$("button#alphabetSort").on('click', function(){
+  //  $("ul").fadeOut('fast');
+  //  $('#loadArea').load("?sort_type=alphabet ul");
+  //});
+
 })

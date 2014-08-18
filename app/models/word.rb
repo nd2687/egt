@@ -17,4 +17,9 @@ class Word < ActiveRecord::Base
     format: { with: /\A[0-9A-Za-z\s]+\z/, on: :create, message: 'format NG' }
   validates :japanese, presence: { message: 'presence NG' }, length: { maximum: 12, message: 'length NG' },
     format: { with: /\A[^\x01-\x7E]+\z/, on: :create, message: 'format NG' }
+
+  before_save do
+    self.english = english.strip if english.present?
+    self.japanese = japanese.strip if japanese.present?
+  end
 end

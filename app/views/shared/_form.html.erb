@@ -14,10 +14,10 @@
   </div>
 
   <div class="sortTag">
-    <button id="normalSort"> 登録(昇順) </button>
-    <button id="reverseSort"> 登録(降順) </button>
+    <button class="sortButton" id="normalSort" data-sort-type=""> 登録(昇順) </button>
+    <button class="sortButton" id="reverseSort" data-sort-type="updated_at"> 登録(降順) </button>
     <%= link_to "月別", "#" %> |
-    <%= link_to "アルファベット順", "#" %> |
+    <button class="sortButton" id="alphabetSort" data-sort-type="english"> アルファベット順 </button>
     <%= link_to "日本語", "#" %> |
     <%= link_to "COMPLETE", "#" %> |
     <%= link_to "EDIT", "#" %>
