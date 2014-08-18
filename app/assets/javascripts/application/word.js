@@ -28,16 +28,20 @@ $(function (){
       type: 'POST',
       data: params,
       success: function(words){
+
         $('html,body').animate({ scrollTop: 0 }, 'fast');
-        var list = $('<li class="word" style="display:none;">')
+        var list = $('<li class="word" style="display:none;">');
         var nesting = list
           .append('<div class="english" style="display:none;" id="ajax_english">' + words[0] + '</div>')
           .append('<div class="japanese" style="display:none;">' + words[1] + '</div>');
-        $('ul#words').prepend(nesting);
+        //alert($('body').find('ul').length);
+        //$('body').find('ul:first').prepend(nesting);
+        $('body').find('ul:not(:hidden)').prepend(nesting);
         list.slideDown();
         $('input#word_english').val('');
         $('input#word_japanese').val('');
         $('div#ajax_english').slideDown(1100);
+
         list.hover(function(){
           var english = $(this).children('.english');
           var japanese = $(this).children('.japanese');
