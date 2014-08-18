@@ -7,7 +7,11 @@ class WordsController < ApplicationController
   def create
     @word = Word.new(user_id: params['user_id'],
                      english: params[:english], japanese: params[:japanese])
-    render json: [ @word.english, @word.japanese ] if @word.save!
+    if @word.save
+      render json: [ @word.english, @word.japanese ]
+    else
+      render json: (@word.errors.present? ? ([false] + @word.errors.full_messages.uniq) : [])
+    end
   end
 
   def reverse

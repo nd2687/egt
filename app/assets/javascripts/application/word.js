@@ -27,36 +27,28 @@ $(function (){
       url: '/words',
       type: 'POST',
       data: params,
-      success: function(words){
+      success: function(data){
+        if(data.length && $.isArray(data) && data[0] !== false){
+          var words = data;
+          $('html,body').animate({ scrollTop: 0 }, 'fast');
+          var list = $('<li class="word" style="display:none;">');
+          var nesting = list
+            .append('<div class="english" style="display:none;" id="ajax_english">' + words[0] + '</div>')
+            .append('<div class="japanese" style="display:none;">' + words[1] + '</div>');
+          //alert($('body').find('ul').length);
+          //$('body').find('ul:first').prepend(nesting);
+          $('body').find('ul:not(:hidden)').prepend(nesting);
+          list.slideDown();
 
-        $('html,body').animate({ scrollTop: 0 }, 'fast');
-        var list = $('<li class="word" style="display:none;">');
-        var nesting = list
-          .append('<div class="english" style="display:none;" id="ajax_english">' + words[0] + '</div>')
-          .append('<div class="japanese" style="display:none;">' + words[1] + '</div>');
-        //alert($('body').find('ul').length);
-        //$('body').find('ul:first').prepend(nesting);
-        $('body').find('ul:not(:hidden)').prepend(nesting);
-        list.slideDown();
-        $('input#word_english').val('');
-        $('input#word_japanese').val('');
-        $('div#ajax_english').slideDown(1100);
-
-        list.hover(function(){
-          var english = $(this).children('.english');
-          var japanese = $(this).children('.japanese');
-          $(this).css('cursor', 'pointer').css('background', '#a3d57c');
-          english.stop().slideUp();
-          japanese.stop().slideDown();
-        },
-        function (){
-          var english = $(this).children('.english');
-          var japanese = $(this).children('.japanese');
-          $(this).css('cursor', 'pointer').css('background', '');
-          english.stop().slideDown();
-          japanese.stop().slideUp();
+          $('input#word_english').val('');
+          $('input#word_japanese').val('');
+          $('div#ajax_english').slideDown(1100);
+        } else if(data[0] === false){
+          data.shift();
+          var errors = data;
+            alert(errors);
         }
-        );
+
         return false;
       }
     })
