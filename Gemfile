@@ -23,3 +23,5 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 
 gem 'annotate', :git => 'https://github.com/ctran/annotate_models'
+
+gem 'will_paginate', '~> 3.0'
