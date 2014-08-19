@@ -2,3 +2,22 @@
   margin-top: 40px;
   text-align: right;
 }
+div.sessionForm {
+  text-align: center;
+  margin: auto;
+  width: 100%;
+}
+table.sessionForm {
+  width: 30%;
+  margin: auto;
+  td {
+    text-align: left;
+    width: 200px;
+  }
+}
+.sessionEmail {
+  display: inline-block;
+}
+.sessionPassword {
+  display: inline-block;
+}

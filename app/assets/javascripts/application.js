@@ -16,3 +16,4 @@
 //= require angular
 //= require_tree ./angular
 //= require_tree ./application
+//= require_tree ./vendor

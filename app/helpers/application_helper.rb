@@ -2,7 +2,7 @@ module ApplicationHelper
   def pageless(total_pages, url=nil, container=nil)
     opts = { :totalPages => total_pages,
              :url => url,
-             :loaderMsg => 'now loading',
+             :loaderMsg => '',
              :loaderImage => image_path("loader.gif")
           }
     container && opts[:container] ||= container
