@@ -48,13 +48,7 @@ $(function (){
           var errors = data;
           var error = "";
           $.each(errors, function(i, value){
-            if(0 <= i && i+1 != errors.length){
-              error += value + "\n"
-            }else{
-              if(i+1 == errors.length){
-                error += value
-              }
-            }
+            error += value + "\n"
           });
           alert(error);
         }
