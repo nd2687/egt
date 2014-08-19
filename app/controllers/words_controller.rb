@@ -14,7 +14,12 @@ class WordsController < ApplicationController
     end
   end
 
-  def delete
+  def edit
+  end
 
+  def update
+  end
+
+  def delete
   end
 end

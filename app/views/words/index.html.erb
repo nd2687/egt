@@ -4,18 +4,18 @@
   <div id="loadArea"></div>
 
   <% if @words.present? %>
-  <ul>
-  <% @words.each do |word| %>
-    <li class="word">
-      <div class="english">
-        <%= word.english %>
-      </div>
-      <div class="japanese" style="display:none;">
-        <%= word.japanese %>
-      </div>
-    </li>
-  <% end %>
-  </ul>
+    <ul>
+    <% @words.each do |word| %>
+      <li class="word">
+        <div class="english">
+          <%= word.english %>
+        </div>
+        <div class="japanese" style="display:none;">
+          <%= word.japanese %>
+        </div>
+      </li>
+    <% end %>
+    </ul>
   <% else %>
     <h1>上のコントロールパネルから英単語を登録しよう！</h1>
   <% end %>
