@@ -5,6 +5,8 @@ class HomeController < ApplicationController
     if request.xhr?
       sleep(1)
       render :partial => "words/more_words"
+    else
+      render "words/index"
     end
   end
 end
