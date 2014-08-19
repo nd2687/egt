@@ -25,3 +25,5 @@ gem 'omniauth-facebook'
 gem 'annotate', :git => 'https://github.com/ctran/annotate_models'
 
 gem 'will_paginate', '~> 3.0'
+
+gem 'rails-i18n'

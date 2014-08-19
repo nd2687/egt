@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      word: 単語
+    attributes:
+      word:
+        english: 英語
+        japanese: 日本語

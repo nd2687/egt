@@ -46,7 +46,17 @@ $(function (){
         } else if(data[0] === false){
           data.shift();
           var errors = data;
-            alert(errors);
+          var error = "";
+          $.each(errors, function(i, value){
+            if(0 <= i && i+1 != errors.length){
+              error += value + "\n"
+            }else{
+              if(i+1 == errors.length){
+                error += value
+              }
+            }
+          });
+          alert(error);
         }
 
         return false;
