@@ -18,9 +18,9 @@
     <button class="sortButton" id="reverseSort" data-sort-type="updated_at"> 登録(降順) </button>
     <%#= link_to "月別", "#" %>
     <button class="sortButton" id="alphabetSort" data-sort-type="english"> アルファベット順 </button>
-    <%= link_to "日本語", :japanese, :class => "sortButton", :id => "japaneseSort", :data => { :sort_type => "japanese" } %>
-    <%= link_to "COMPLETE", "#" %> |
-    <%= link_to "EDIT", "#" %>
+    <%= link_to "日本語", japanese_words_path, :class => "sortButton", :id => "japaneseSort", :data => { :sort_type => "japanese" } %>
+    <%= link_to "COMPLETE", complete_words_path %>
+    <%= link_to "EDIT", edit_words_path %>
   </div>
 </div>
 

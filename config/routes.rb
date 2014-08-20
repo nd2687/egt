@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get 'japanese', to: "words#japanese", as: "japanese"
-
-  resources :words
+  resources :words do
+    get :japanese,  on: :collection
+    get :edit,  on: :collection
+    get :complete,  on: :collection
+  end
 
   devise_for :users, :controllers => {
     :sessions => "users/sessions",
