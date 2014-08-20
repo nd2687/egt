@@ -20,7 +20,9 @@
     <h1>上のコントロールパネルから英単語を登録しよう！</h1>
   <% end %>
 
-  <% if params[:sort_type].present? %>
+  <% if params[:sort_type].present? && params[:sort_type] == "japanese" %>
+    <%= pageless(@words.total_pages, "/japanese/") %>
+  <% elsif params[:sort_type].present? %>
     <%= pageless(@words.total_pages, root_path + "?sort_type="  + params[:sort_type]) %>
   <% else %>
     <%= pageless(@words.total_pages, root_path) %>

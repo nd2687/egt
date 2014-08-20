@@ -16,14 +16,15 @@
   <div class="sortTag">
     <button class="sortButton" id="normalSort" data-sort-type=""> 登録(昇順) </button>
     <button class="sortButton" id="reverseSort" data-sort-type="updated_at"> 登録(降順) </button>
-    <%= link_to "月別", "#" %> |
+    <%#= link_to "月別", "#" %>
     <button class="sortButton" id="alphabetSort" data-sort-type="english"> アルファベット順 </button>
-    <%= link_to "日本語", "#" %> |
+    <%= link_to "日本語", :japanese, :class => "sortButton", :id => "japaneseSort", :data => { :sort_type => "japanese" } %>
     <%= link_to "COMPLETE", "#" %> |
     <%= link_to "EDIT", "#" %>
   </div>
 </div>
 
+<!--
 <div class="navFirst">
   <p class="navMessage">英単語追加 | ControlPanel</p>
 </div>
@@ -31,3 +32,4 @@
 <div class="completeCount">
   <div>Complete 66</div>
 </div>
+-->
