@@ -1,9 +1,9 @@
-.nav form {
+.newForm {
   float: left;
-  width: 200px;
-  height: 55px;
+  width:  40%;
 }
 .nav form {
+  float: left;
   display: none;
 }
 .nav button {
@@ -11,9 +11,9 @@
 }
 #new_word {
   float: left;
-  height: 50px;
-  width:  100px;
-  margin-top: 1px;
+  height: 48px;
+  margin-top: 3px;
+  margin-left: 30px;
   font-family:Arial, sans-serif;
   font-size:1.2em;
   text-transform:uppercase;
@@ -25,9 +25,23 @@ input:focus {
 }
 div.sortTag {
   float: left;
-  display: none;
-  width: 500px;
-  height: 55px;
+  width: 60%;
+  margin: auto;
+}
+
+button.sortButton {
+  font-family:Arial, sans-serif;
+  font-size:0.7em;
+  font-weight:bold;
+  background: #EEE;
+  border-top: 1px solid #DDD;
+  border-left: 1px solid #DDD;
+  border-right: 1px solid #BBB;
+  border-bottom: 1px solid #BBB;
+  color:#111;
+  width: 100px;
+  padding: 10px 0;
+  cursor: pointer;
 }
 div.boxComplete {
   float: left;

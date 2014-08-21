@@ -1,25 +1,28 @@
 <div class="nav">
 
-  <%= form_for(:word, :url => { :controller => :words, :action => :create,
-               :method => :post }, remote: true, class: "clearfix" ) do |f| %>
-      <%= f.text_field :english, placeholder: "English" %><br>
-      <%= f.text_field :japanese, placeholder: "日本語" %><br>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-  <% end %>
+  <div class="newForm">
+    <%= form_for(:word, :url => { :controller => :words, :action => :create,
+                 :method => :post }, remote: true, class: "clearfix" ) do |f| %>
+        <%= f.text_field :english, placeholder: "English" %><br>
+        <%= f.text_field :japanese, placeholder: "日本語" %><br>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+    <% end %>
 
-  <button id="new_word" data-user_id="<%= current_user.id %>">submit</button>
-
-  <div class="boxComplete">
-   ここにCompleコンテンツ
+    <button id="new_word" data-user_id="<%= current_user.id %>">submit</button>
   </div>
 
   <div class="sortTag">
-    <button class="sortButton" id="normalSort" data-sort-type="" data-word-type="<%= params[:word_type] %>"> 登録(昇順) </button>
-    <button class="sortButton" id="reverseSort" data-sort-type="updated_at" data-word-type="<%= params[:word_type] %>"> 登録(降順) </button>
+    <button class="sortButton" id="normalSort" data-sort-type=""
+      data-word-type="<%= params[:word_type] %>"> 登録(昇順) </button>
+    <button class="sortButton" id="reverseSort" data-sort-type="updated_at"
+      data-word-type="<%= params[:word_type] %>"> 登録(降順) </button>
     <%#= link_to "月別", "#" %>
-    <button class="sortButton" id="alphabetSort" data-sort-type="english" data-word-type="en"> アルファベット順 </button>
-    <button class="sortButton" id="alphabetSort" data-sort-type="<%= params[:sort_type] %>" data-word-type="ja"> 日本語 </button>
-    <button class="sortButton" id="alphabetSort" data-sort-type="<%= params[:sort_type] %>" data-word-type="en"> 英語 </button>
+    <button class="sortButton" id="alphabetSort" data-sort-type="english"
+      data-word-type="en"> アルファベット順 </button>
+    <button class="sortButton" data-sort-type="<%= params[:sort_type] %>"
+      data-word-type="ja"> 日本語 </button>
+    <button class="sortButton" data-sort-type="<%= params[:sort_type] %>"
+      data-word-type="en"> 英語 </button>
   </div>
 </div>
 
