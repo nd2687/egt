@@ -22,13 +22,4 @@ class WordsController < ApplicationController
 
   def delete
   end
-
-  def japanese
-    @words = current_user.words.all.order("updated_at desc").paginate(:per_page => 100, :page => params[:page])
-    if request.xhr?
-      sleep(1)
-      render :partial => "words/more_words_jp"
-    end
-  end
-
 end

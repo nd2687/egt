@@ -1,17 +1,21 @@
 <%= render 'shared/form.html.erb' %>
 
-<div class="words">
-  <div id="loadArea"></div>
-
+<div class="words" data-word-type="<%= params[:word_type] %>">
   <% if @words.present? %>
     <ul>
     <% @words.each do |word| %>
       <li class="word">
-        <div class="english">
+      <div class="english" style="<%= params[:word_type] == 'ja' ? 'display:none;' : '' %>">
           <%= word.english %>
         </div>
-        <div class="japanese" style="display:none;">
+        <div class="japanese" style="<%= params[:word_type] == 'ja' ? '' : 'display:none;' %>">
           <%= word.japanese %>
+        </div>
+        <div class="actionWord" style="display:none;">
+          <%= link_to "検索" %>
+          <%= link_to "完了" %>
+          <%= link_to "編集" %>
+          <%= link_to "削除" %>
         </div>
       </li>
     <% end %>
@@ -20,11 +24,9 @@
     <h1>上のコントロールパネルから英単語を登録しよう！</h1>
   <% end %>
 
-  <% if params[:sort_type].present? && params[:sort_type] == "japanese" %>
-    <%= pageless(@words.total_pages, "/japanese/") %>
-  <% elsif params[:sort_type].present? %>
-    <%= pageless(@words.total_pages, root_path + "?sort_type="  + params[:sort_type]) %>
+  <% if params[:sort_type].present? %>
+    <%= pageless(@words.total_pages, root_path + "?sort_type="  + params[:sort_type] + "&word_type=" + params[:word_type]) %>
   <% else %>
-    <%= pageless(@words.total_pages, root_path) %>
+    <%= pageless(@words.total_pages, root_path + "?word_type=#{params[:word_type]}") %>
   <% end %>
 </div>

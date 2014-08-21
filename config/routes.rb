@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :words do
-    get :japanese,  on: :collection
     get :edit,  on: :collection
     get :complete,  on: :collection
   end

@@ -14,13 +14,12 @@
   </div>
 
   <div class="sortTag">
-    <button class="sortButton" id="normalSort" data-sort-type=""> 登録(昇順) </button>
-    <button class="sortButton" id="reverseSort" data-sort-type="updated_at"> 登録(降順) </button>
+    <button class="sortButton" id="normalSort" data-sort-type="" data-word-type="<%= params[:word_type] %>"> 登録(昇順) </button>
+    <button class="sortButton" id="reverseSort" data-sort-type="updated_at" data-word-type="<%= params[:word_type] %>"> 登録(降順) </button>
     <%#= link_to "月別", "#" %>
-    <button class="sortButton" id="alphabetSort" data-sort-type="english"> アルファベット順 </button>
-    <%= link_to "日本語", japanese_words_path, :class => "sortButton", :id => "japaneseSort", :data => { :sort_type => "japanese" } %>
-    <%= link_to "COMPLETE", complete_words_path %>
-    <%= link_to "EDIT", edit_words_path %>
+    <button class="sortButton" id="alphabetSort" data-sort-type="english" data-word-type="en"> アルファベット順 </button>
+    <button class="sortButton" id="alphabetSort" data-sort-type="<%= params[:sort_type] %>" data-word-type="ja"> 日本語 </button>
+    <button class="sortButton" id="alphabetSort" data-sort-type="<%= params[:sort_type] %>" data-word-type="en"> 英語 </button>
   </div>
 </div>
 

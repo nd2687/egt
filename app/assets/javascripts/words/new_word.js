@@ -1,18 +1,30 @@
 $(function (){
   $("body").on({
     'mouseenter':function(){
+      var wordType = $('div.words').first().attr('data-word-type');
       var english = $(this).children('.english');
       var japanese = $(this).children('.japanese');
       $(this).css('cursor', 'pointer').css('background', '#a3d57c');
-      english.stop().slideUp();
-      japanese.stop().slideDown();
+      if(wordType === "ja"){
+        english.stop().slideDown();
+        japanese.stop().slideUp();
+      }else{
+        english.stop().slideUp();
+        japanese.stop().slideDown();
+      }
     },
     'mouseleave':function(){
+      var wordType = $('div.words').first().attr('data-word-type');
       var english = $(this).children('.english');
       var japanese = $(this).children('.japanese');
       $(this).css('cursor', 'pointer').css('background', '');
-      english.stop().slideDown();
-      japanese.stop().slideUp();
+      if(wordType !== "ja"){
+        english.stop().slideDown();
+        japanese.stop().slideUp();
+      }else{
+        english.stop().slideUp();
+        japanese.stop().slideDown();
+      }
     }
   }, 'li.word');
 
