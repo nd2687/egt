@@ -1,11 +1,12 @@
 $(function(){
   $('body').on('click', 'li.word', function(){
     if($(this).hasClass('selected')){
-      $(this).removeClass('selected').find('.actionWord').hide();
+      $(this).removeClass('selected').parent('ul.wordUl').children().last().children('.menuWord').hide();
     }else{
       $('li.word').removeClass('selected');
-      $('.actionWord').hide();
-      $(this).addClass('selected').find('.actionWord').show();
+
+      $('.menuWord').hide();
+      $(this).addClass('selected').parent('ul.wordUl').children().last().children('.menuWord').show();
     };
   });
 });

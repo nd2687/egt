@@ -1,20 +1,22 @@
 <div class="words" data-word-type="<%= params[:word_type] %>">
-  <ul>
   <% @words.each do |word| %>
+  <ul class="wordUl">
     <li class="word">
-    <div class="english" style="<%= params[:word_type] == 'ja' ? 'display:none;' : '' %>">
+      <div class="english" style="<%= params[:word_type] == 'ja' ? 'display:none;' : '' %>">
         <%= word.english %>
       </div>
       <div class="japanese" style="<%= params[:word_type] == 'ja' ? '' : 'display:none;' %>">
         <%= word.japanese %>
       </div>
-      <div class="actionWord" style="display:none;">
+    </li>
+    <li class="menu">
+      <div class="menuWord" style="display:none;">
         <%= link_to "検索" %>
         <%= link_to "完了" %>
         <%= link_to "編集" %>
         <%= link_to "削除" %>
       </div>
     </li>
-  <% end %>
   </ul>
+  <% end %>
 </div>

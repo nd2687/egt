@@ -1,15 +1,27 @@
-li.word {
-  float: left;
+ul.wordUl {
+  height:75px;
   width: 200px;
-  height: 50px;
-  margin: 20px;
-  background: #88c857;
-  list-style: none;
-  div {
+  padding: 0px;
+  margin: 0px 10px;
+  float: left;
+  li.word {
+    width: 200px;
+    height: 50px;
+    background: #88c857;
+    list-style: none;
+    div.japanese, div.english {
+      width: 200px;
+      height: 25px;
+      text-align: center;
+      position: relative;
+      top: 12px;
+    }
+  }
+  li.menu {
     width: 200px;
     height: 25px;
-    margin: 12px 0;
     text-align: center;
+    list-style: none;
   }
 }
 .nav {
@@ -28,9 +40,4 @@ li.word {
     padding: 0;
     margin: 0;
   }
-}
-.completeCount {
-  position: fixed;
-  top: 0;
-  right: 10px;
 }
