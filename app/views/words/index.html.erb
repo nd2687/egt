@@ -1,5 +1,7 @@
 <%= render 'shared/form.html.erb' %>
 
+<div id="dialog" style="display:none;">単語を追加しました!</div>
+
 <div class="words" data-word-type="<%= params[:word_type] %>">
   <% if @words.present? %>
     <% @words.each do |word| %>
