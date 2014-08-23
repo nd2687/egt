@@ -2,6 +2,7 @@
 
 <div id="newwordSuccess" style="display:none;">データを追加しました！</div>
 
+
 <div class="words" data-word-type="<%= params[:word_type] %>">
   <% if @words.present? %>
     <% @words.each do |word| %>
@@ -18,8 +19,16 @@
       <div class="menuWord" style="display:none;" data-word_id="<%= word.id %>">
           <%= link_to "検索", "#" %>
           <%= link_to "完了", "#" %>
-          <%= link_to "編集", [ :edit, word ], id: "ordEdit", remote: true %>
-          <button id="editDialog">hoge</button>
+          <button id="editDialog">編集</button>
+          <div id="editwordForm<%= word.id %>" style="display:none;">
+            <%= form_for(:word, url: word_path(id: word.id),
+                         :method => :patch, remote: true) do |f| %>
+              <%= f.text_field :english, placeholder: "English", value: word.english %><br>
+              <%= f.text_field :japanese, placeholder: "日本語", value: word.japanese %><br>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+            <% end %>
+            <button>submit</button>
+          </div>
           <%= link_to "削除", "#" %>
         </div>
       </li>

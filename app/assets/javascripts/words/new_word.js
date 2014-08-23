@@ -83,8 +83,8 @@ $(function (){
           //  $('body').find('div.words:not(:hidden)').prepend(nesting_en);
           //  ul.slideDown();
 
-          $('input#word_english').val('');
-          $('input#word_japanese').val('');
+          $('div.newForm').children('input#word_english').val('');
+          $('div.newForm').children('input#word_japanese').val('');
           //  $('div#ajax_english').slideDown(1100);
           //}else{
           //}
