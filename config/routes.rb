@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :words do
-    get :edit,  on: :collection
+    get :edit,  on: :member
     get :complete,  on: :collection
   end
 

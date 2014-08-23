@@ -1,4 +1,22 @@
 $(function (){
+  $( "#newwordSuccess" ).dialog({
+    autoOpen: false,
+    show: "clip",
+    hide: "fade",
+    height: 50,
+    closeOnEscape: true,
+    draggable: false,
+    position: {
+      my: "center",
+      at: "center",
+      of: window
+    },
+    open: function(event, ui){
+      setTimeout("$('#newwordSuccess').dialog('close')",2500);
+    }
+  });
+  $(".ui-dialog-titlebar").hide();
+
   $("body").on({
     'mouseenter':function(){
       var wordType = $('div.words').first().attr('data-word-type');
@@ -41,7 +59,13 @@ $(function (){
       data: params,
       success: function(data){
         if(data.length && $.isArray(data) && data[0] !== false){
-          $( "#dialog" ).show();
+          //var new_words = data;
+          //var new_word = "";
+          //$.each(new_words, function(i, value){
+          //  new_word += value + "\n"
+          //});
+          //alert(new_word + "\n" + "を追加しました！");
+          $( "#newwordSuccess" ).dialog( "open" );
           //var wordType = $('div.words').first().attr('data-word-type');
           //var words = data;
           //$('html,body').animate({ scrollTop: 0 }, 'fast');

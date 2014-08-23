@@ -15,9 +15,12 @@ class WordsController < ApplicationController
   end
 
   def edit
+    @word = Word.find(params[:id])
+    render json: [ @word.english, @word.japanese ]
   end
 
   def update
+    @word = Word.find(params[:id])
   end
 
   def delete
