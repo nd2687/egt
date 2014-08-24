@@ -21,7 +21,7 @@
             <%= f.text_field :japanese, placeholder: "日本語", value: word.japanese %><br>
             <%= f.hidden_field :user_id, value: current_user.id %>
           <% end %>
-          <button>submit</button>
+          <button id="editwordSubmit">submit</button>
         </div>
         <%= link_to "削除", "#" %>
       </div>

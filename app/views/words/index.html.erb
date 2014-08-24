@@ -1,13 +1,14 @@
 <%= render 'shared/form.html.erb' %>
 
 <div id="newwordSuccess" style="display:none;">データを追加しました！</div>
+<div id="editwordSuccess" style="display:none;">データを更新しました！</div>
 
 
 <div class="words" data-word-type="<%= params[:word_type] %>">
   <% if @words.present? %>
     <% @words.each do |word| %>
-    <ul class="wordUl">
-      <li class="word">
+    <ul class="wordUl" id="<%= word.id %>">
+      <li class="word" id="<%= word.id %>">
         <div class="english" style="<%= params[:word_type] == 'ja' ? 'display:none;' : '' %>">
           <%= word.english %>
         </div>
@@ -16,19 +17,22 @@
         </div>
       </li>
       <li class="menu">
-      <div class="menuWord" style="display:none;" data-word_id="<%= word.id %>">
+        <div class="menuWord" style="display:none;" data-word_id="<%= word.id %>">
           <%= link_to "検索", "#" %>
           <%= link_to "完了", "#" %>
+
           <button id="editDialog">編集</button>
+
           <div id="editwordForm<%= word.id %>" style="display:none;">
             <%= form_for(:word, url: word_path(id: word.id),
-                         :method => :patch, remote: true) do |f| %>
+                         :method => :patch, remote: true, id: "editForm") do |f| %>
               <%= f.text_field :english, placeholder: "English", value: word.english %><br>
               <%= f.text_field :japanese, placeholder: "日本語", value: word.japanese %><br>
               <%= f.hidden_field :user_id, value: current_user.id %>
             <% end %>
-            <button>submit</button>
+            <button id="editwordSubmit<%= word.id %>" data-word_id="<%= word.id %>">更新</button>
           </div>
+
           <%= link_to "削除", "#" %>
         </div>
       </li>

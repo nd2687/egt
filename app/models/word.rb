@@ -15,10 +15,10 @@ class Word < ActiveRecord::Base
 
   validates :english, presence: { message: 'を入力してください。' },
     length: { maximum: 21, message: 'は最大21文字までです。' },
-    format: { with: /\A[0-9A-Za-z\s]+\z/, on: :create, message: 'は半角英数字を入力してください。' }
+    format: { with: /\A[0-9A-Za-z\s]+\z/,message: 'は半角英数字を入力してください。' }
   validates :japanese, presence: { message: 'を入力してください。' },
     length: { maximum: 12, message: 'は最大12文字までです。' },
-    format: { with: /\A[^\x01-\x7E]+\z/, on: :create, message: 'は全角ひらがな、漢字、数字、半角カタカナを入力してください。' }
+    format: { with: /\A[^\x01-\x7E]+\z/, message: 'は全角ひらがな、漢字、数字、半角カタカナを入力してください。' }
 
   before_save do
     self.english = english.strip if english.present?
