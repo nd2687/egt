@@ -1,6 +1,7 @@
 <%= render 'shared/form.html.erb' %>
 
 <div id="newwordSuccess" style="display:none;">データを追加しました！</div>
+<div id="completewordSuccess" style="display:none;">データを完了へ移行しました！</div>
 <div id="editwordSuccess" style="display:none;">データを更新しました！</div>
 <div id="deletewordSuccess" style="display:none;">データを削除しました！</div>
 
@@ -20,7 +21,7 @@
       <li class="menu">
         <div class="menuWord" style="display:none;" data-word_id="<%= word.id %>">
           <%= link_to "検索", "#" %>
-          <%= link_to "完了", "#" %>
+          <button class="completeWord">完了</button>
 
           <button id="editDialog">編集</button>
 

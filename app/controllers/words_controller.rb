@@ -35,4 +35,11 @@ class WordsController < ApplicationController
       render json: { success: true }
     end
   end
+
+  def complete
+    @word = current_user.words.find(params[:id])
+    @word.complete = true
+    @word.save
+    render json: { success: true }
+  end
 end

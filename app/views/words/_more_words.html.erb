@@ -12,7 +12,7 @@
     <li class="menu">
       <div class="menuWord" style="display:none;" data-word_id="<%= word.id %>">
         <%= link_to "検索", "#" %>
-        <%= link_to "完了", "#" %>
+        <button class="completeWord">完了</button>
 
         <button id="editDialog">編集</button>
 
@@ -23,7 +23,7 @@
             <%= f.text_field :japanese, placeholder: "日本語", value: word.japanese %><br>
             <%= f.hidden_field :user_id, value: current_user.id %>
           <% end %>
-          <button id="editwordSubmit<%= word.id %>" data-word_id="<%= word.id %>">更新</button>
+          <button class="editWordSubmits" id="editwordSubmit<%= word.id %>" data-word_id="<%= word.id %>">更新</button>
         </div>
 
         <button id="deleteWord">削除</button>

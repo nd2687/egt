@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :words do
-    get :edit,  on: :member
-    get :complete,  on: :collection
+    get :edit, on: :member
+    patch :complete, on: :member
   end
 
   devise_for :users, :controllers => {
