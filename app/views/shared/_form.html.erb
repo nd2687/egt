@@ -18,7 +18,7 @@
       data-word-type="<%= params[:word_type] %>" data-complete-type="<%= params[:complete_type] %>"> 登録(降順) </button>
     <button class="sortButton" id="alphabetSort" data-sort-type="english" data-complete-type="<%= params[:complete_type] %>"
       data-word-type="en"> アルファベット順 </button>
-    <button class="sortButton" id="japaneseSort" data-sort-type="<%= params[:sort_type] %>"
+    <button class="sortButton" id="japaneseSort" data-sort-type="<%= params[:sort_type] == "english" ? "" : params[:sort_type] %>"
       data-word-type="ja" data-complete-type="<%= params[:complete_type] %>"> 日本語 </button>
     <button class="sortButton" id="englishSort" data-sort-type="<%= params[:sort_type] %>"
       data-word-type="en" data-complete-type="<%= params[:complete_type] %>"> 英語 </button>

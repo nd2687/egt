@@ -1,8 +1,10 @@
 $(function (){
-
-  if(location.pathname !== "/"){
-    var url   = location.href;
-    params    = url.split("?");
+  var url   = location.href;
+  params    = url.split("?");
+  if( params.length === 1 ){
+    $('#normalSort').css('color', 'red');
+    $('#englishSort').css('color', 'red');
+  }else{
     paramms   = params[1].split("&");
 
     var paramArray = [];
@@ -24,7 +26,11 @@ $(function (){
       $('#reverseSort').css('color', 'red');
     }else
     if(paramArray["sort_type"] === "english"){
-      $('#alphabetSort').css('color', 'red');
+      if(paramArray["word_type"] === "ja"){
+        $('#normalSort').css('color', 'red');
+      }else{
+        $('#alphabetSort').css('color', 'red');
+      }
     };
 
     if(paramArray["word_type"] === "ja"){
@@ -41,9 +47,6 @@ $(function (){
       $('#completeSort').css('color', 'red');
       $('body').find('li.word').css('background', 'blue');
     };
-  }else{
-    $('#normalSort').css('color', 'red');
-    $('#englishSort').css('color', 'red');
   };
 
   $("button.sortButton").on('click', function(){
@@ -64,13 +67,16 @@ $(function (){
     }else
     if(sortType === "english"){
       $('#alphabetSort').css('color', 'red');
-      $('#normalSort').css('color', '');
+      $('#englishSort').css('color', 'red');
       $('#reverseSort').css('color', '');
+      $('#normalSort').css('color', '');
+      $('#japaneseSort').css('color', '');
     };
 
     if(wordType === "ja"){
       $('#japaneseSort').css('color', 'red');
       $('#englishSort').css('color', '');
+      $('#alphabetSort').css('color', '');
     }else
     if(wordType === "en"){
       $('#englishSort').css('color', 'red');
