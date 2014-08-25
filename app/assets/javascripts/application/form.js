@@ -38,8 +38,7 @@ $(function() {
     $('div.nav form').stop().fadeIn('slow');
     $('div.nav button').stop().fadeIn('slow');
     $('div.sortTag').stop().fadeIn('slow');
-    $('div.navFirst').stop().fadeOut('slow');
-    $('div.completeCount').stop().fadeOut('slow');
+    $('div.count').stop().fadeIn('slow');
     $(this).css('background', '#5ac86b');
     if (showFlag == false) {
         showFlag = true;
@@ -48,16 +47,15 @@ $(function() {
     .stop().animate({'top' : '0px'}, 200)
     }
   },
- function (){
-   $('div.nav form').stop().fadeOut('slow');
-   $('div.nav button').stop().fadeOut('slow');
-   $('div.sortTag').stop().fadeOut('slow');
-   $('div.navFirst').stop().fadeIn('slow');
-   $('div.completeCount').stop().fadeIn('slow');
-   $(this).css('background', '#dff4e9');
-   showFlag = false;
-   nav.stop().animate({'top' : -navHeight+'px'}, 500, function(){
-     nav.removeClass('fixed');
-   });
- });
+  function (){
+    $('div.nav form').stop().fadeOut('slow');
+    $('div.nav button').stop().fadeOut('slow');
+    $('div.sortTag').stop().fadeOut('slow');
+    $('div.count').stop().fadeOut('slow');
+    $(this).css('background', '#dff4e9');
+    showFlag = false;
+    nav.stop().animate({'top' : -navHeight+'px'}, 500, function(){
+      nav.removeClass('fixed');
+    });
+  });
 });

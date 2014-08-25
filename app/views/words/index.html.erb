@@ -21,7 +21,10 @@
       <li class="menu">
         <div class="menuWord" style="display:none;" data-word_id="<%= word.id %>">
           <%= link_to "検索", "#" %>
-          <button class="completeWord">完了</button>
+
+          <% unless params[:complete_type] == "complete" %>
+            <button class="completeWord">完了</button>
+          <% end %>
 
           <button id="editDialog">編集</button>
 

@@ -13,28 +13,23 @@
 
   <div class="sortTag">
     <button class="sortButton" id="normalSort" data-sort-type=""
-      data-word-type="<%= params[:word_type] %>" data-complete-type="<%= params[:complete] %>"> 登録(昇順) </button>
+      data-word-type="<%= params[:word_type] %>" data-complete-type="<%= params[:complete_type] %>"> 登録(昇順) </button>
     <button class="sortButton" id="reverseSort" data-sort-type="updated_at"
-      data-word-type="<%= params[:word_type] %>" data-complete-type="<%= params[:complete] %>"> 登録(降順) </button>
-    <button class="sortButton" id="alphabetSort" data-sort-type="english"
+      data-word-type="<%= params[:word_type] %>" data-complete-type="<%= params[:complete_type] %>"> 登録(降順) </button>
+    <button class="sortButton" id="alphabetSort" data-sort-type="english" data-complete-type="<%= params[:complete_type] %>"
       data-word-type="en"> アルファベット順 </button>
     <button class="sortButton" data-sort-type="<%= params[:sort_type] %>"
-      data-word-type="ja" data-complete-type="<%= params[:complete] %>"> 日本語 </button>
+      data-word-type="ja" data-complete-type="<%= params[:complete_type] %>"> 日本語 </button>
     <button class="sortButton" data-sort-type="<%= params[:sort_type] %>"
-      data-word-type="en" data-complete-type="<%= params[:complete] %>"> 英語 </button>
+      data-word-type="en" data-complete-type="<%= params[:complete_type] %>"> 英語 </button>
     <button class="sortButton" data-sort-type="<%= params[:sort_type] %>"
       data-word-type="<%= params[:word_type] %>" data-complete-type="complete"> 完了 </button>
     <button class="sortButton" data-sort-type=""
       data-word-type="" data-complete-type=""> リセット </button>
   </div>
-</div>
 
-<!--
-<div class="navFirst">
-  <p class="navMessage">英単語追加 | ControlPanel</p>
+  <div class="count">
+    コンプリート数 : <%= @complete_count %><br />
+    登録数 : <%= @word_count %>
+  </div>
 </div>
-
-<div class="completeCount">
-  <div>Complete 66</div>
-</div>
--->

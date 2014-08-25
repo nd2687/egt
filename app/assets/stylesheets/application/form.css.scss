@@ -1,6 +1,6 @@
 .newForm {
   float: left;
-  width:  40%;
+  margin-right: 10px;
 }
 .nav form {
   float: left;
@@ -13,7 +13,7 @@
   float: left;
   height: 48px;
   margin-top: 3px;
-  margin-left: 30px;
+  margin-left: 10px;
   font-family:Arial, sans-serif;
   font-size:1.2em;
   text-transform:uppercase;
@@ -25,8 +25,7 @@ input:focus {
 }
 div.sortTag {
   float: left;
-  width: 60%;
-  margin: auto;
+  margin: 8px 0;
 }
 
 button.sortButton {
@@ -49,4 +48,12 @@ div.boxComplete {
   height: 55px;
   margin: 0 20px;
   text-align: center;
+}
+.count {
+  float: left;
+  width: 200px;
+  height: 50px;
+  margin-left: 10px;
+  text-align: right;
+  display: none;
 }
