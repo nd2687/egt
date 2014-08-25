@@ -2,7 +2,8 @@
   word = Word.new(
     english: "taro#{idx}",
     japanese: "太郎",
-    user_id: 1
+    user_id: 1,
+    complete: idx%2 == 0
   )
   word.save!
 end
@@ -11,7 +12,8 @@ end
   word = Word.new(
     english: "alice#{idx}",
     japanese: "アリス",
-    user_id: 2
+    user_id: 2,
+    complete: idx%2 == 0
   )
   word.save!
 end

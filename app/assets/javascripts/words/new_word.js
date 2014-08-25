@@ -59,12 +59,6 @@ $(function (){
       data: params,
       success: function(data){
         if(data.length && $.isArray(data) && data[0] !== false){
-          //var new_words = data;
-          //var new_word = "";
-          //$.each(new_words, function(i, value){
-          //  new_word += value + "\n"
-          //});
-          //alert(new_word + "\n" + "を追加しました！");
           //var wordType = $('div.words').first().attr('data-word-type');
           //var words = data;
           //$('html,body').animate({ scrollTop: 0 }, 'fast');
@@ -83,8 +77,8 @@ $(function (){
           //  ul.slideDown();
 
           $( "#newwordSuccess" ).dialog( "open" );
-          $('div.newForm').children('input#word_english').val('');
-          $('div.newForm').children('input#word_japanese').val('');
+          $('div.newForm').find('input#word_english').val('');
+          $('div.newForm').find('input#word_japanese').val('');
           //  $('div#ajax_english').slideDown(1100);
           //}else{
           //}
