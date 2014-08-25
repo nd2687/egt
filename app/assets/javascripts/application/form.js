@@ -11,7 +11,7 @@ $(function() {
   //表示位置
   var navTop = nav.offset().top+170;
   //ナビゲーションの高さ（シャドウの分だけ足してます）
-  var navHeight = nav.height()+10;
+  var navHeight = nav.height();
   var showFlag = false;
   nav.css('top', -navHeight+'px');
   //ナビゲーションの位置まできたら表示

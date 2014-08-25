@@ -19,6 +19,7 @@ $(function(){
 
   $('body').on('click', '.completeWord', function(){
     var word_id = $(this).parent('.menuWord').attr('data-word_id');
+
     $.ajax({
       url: "/words/" + word_id + "/complete",
       type: "PATCH",
