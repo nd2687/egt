@@ -4,6 +4,7 @@ class CreateWords < ActiveRecord::Migration
       t.references :user, null: false
       t.string :english, null: false
       t.string :japanese, null: false
+      t.boolean :complete, null: false, default: false
 
       t.timestamps
     end
