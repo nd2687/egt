@@ -51,7 +51,6 @@ $(function(){
         type: 'PATCH',
         data: params,
         success: function(data){
-          console.log(data)
           if(data[0] === false){
             data.shift();
             var errors = data;
@@ -63,9 +62,8 @@ $(function(){
           }else{
             $("#editwordForm" + word_id).dialog(opt).dialog("close");
             $( "#editwordSuccess" ).dialog( "open" );
-            //更新した値のリアルタイム表示反映、more、japanese対応
-            $('body').find('ul#'+params['word_id']).children('li#'+params['word_id']).children('div.english').val(params['english']);
-            $('body').find('ul#'+params['word_id']).children('li#'+params['word_id']).children('div.japanese').val(params['japanese']);
+            $('body').find('ul#'+params['word_id']).children('li#'+params['word_id']).children('div.english').text(params['english']);
+            $('body').find('ul#'+params['word_id']).children('li#'+params['word_id']).children('div.japanese').text(params['japanese']);
           }
           return false;
         }
