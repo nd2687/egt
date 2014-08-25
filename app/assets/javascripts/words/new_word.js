@@ -82,6 +82,9 @@ $(function (){
           //  $('div#ajax_english').slideDown(1100);
           //}else{
           //}
+          var str_count = $('body').find('span#newWordCount').text();
+          var count = Number(str_count);
+          $('span#newWordCount').text(count+1);
         }else if(data[0] === false){
           data.shift();
           var errors = data;
