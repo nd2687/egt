@@ -29,13 +29,10 @@ class WordsController < ApplicationController
     end
   end
 
-  def delete
-  end
-
-  private
-  def edit_word
-    params.require(:word).permit(
-      :english, :japanese
-    )
+  def destroy
+    @word = Word.find(params[:id])
+    if @word.delete
+      render json: { success: true }
+    end
   end
 end

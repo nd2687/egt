@@ -2,6 +2,7 @@
 
 <div id="newwordSuccess" style="display:none;">データを追加しました！</div>
 <div id="editwordSuccess" style="display:none;">データを更新しました！</div>
+<div id="deletewordSuccess" style="display:none;">データを削除しました！</div>
 
 
 <div class="words" data-word-type="<%= params[:word_type] %>">
@@ -33,7 +34,7 @@
             <button id="editwordSubmit<%= word.id %>" data-word_id="<%= word.id %>">更新</button>
           </div>
 
-          <%= link_to "削除", "#" %>
+          <button id="deleteWord">削除</button>
         </div>
       </li>
     </ul>
