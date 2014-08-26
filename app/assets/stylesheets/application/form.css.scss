@@ -27,8 +27,8 @@ div.sortTag {
   float: left;
   margin: 8px 0;
 }
-
-button.sortButton {
+.sortButton {
+  border: 2px solid #333;
   font-family:Arial, sans-serif;
   font-size:0.7em;
   font-weight:bold;
@@ -42,7 +42,30 @@ button.sortButton {
   padding: 10px 0;
   cursor: pointer;
 }
-div.boxComplete {
+.sortButton:hover {
+  background-color: #fff;
+  border-color: #59b1eb;
+  color: #59b1eb;
+}
+.sortButton::before,
+.sortButton::after {
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+}
+.sortButton::before {
+  right: 0;
+}
+.sortButton::after {
+  left: 0;
+}
+.sortButton:hover::before,
+.sortButton:hover::after {
+  width: 0;
+  background-color: #59b1eb;
+}
+.boxComplete {
   float: left;
   width: 400px;
   height: 55px;
@@ -57,3 +80,4 @@ div.boxComplete {
   text-align: right;
   display: none;
 }
+
