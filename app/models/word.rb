@@ -20,6 +20,9 @@ class Word < ActiveRecord::Base
   validates :japanese, presence: { message: 'を入力してください。' },
     length: { maximum: 12, message: 'は最大12文字までです。' },
     format: { with: /\A[^\x01-\x7E]+\z/, message: 'は全角ひらがな、漢字、数字、半角カタカナを入力してください。' }
+  #同じユーザーIDでenglishカラムをユニーク制約
+  validates_uniqueness_of :english, :scope => :user_id,
+                          :message =>"が既に存在しています。"
 
   before_save do
     self.english = english.strip if english.present?
