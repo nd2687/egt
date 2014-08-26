@@ -46,6 +46,35 @@ $(function (){
     }
   }, 'li.word');
 
+  $("body").on({
+    'mouseenter':function(){
+      var wordType = $('div.words').first().attr('data-word-type');
+      var english = $(this).children('.english');
+      var japanese = $(this).children('.japanese');
+      $(this).css('cursor', 'pointer').css('background', '#a3d57c');
+      if(wordType === "ja"){
+        english.stop().slideDown();
+        japanese.stop().slideUp();
+      }else{
+        english.stop().slideUp();
+        japanese.stop().slideDown();
+      }
+    },
+    'mouseleave':function(){
+      var wordType = $('div.words').first().attr('data-word-type');
+      var english = $(this).children('.english');
+      var japanese = $(this).children('.japanese');
+      $(this).css('cursor', 'pointer').css('background', '');
+      if(wordType !== "ja"){
+        english.stop().slideDown();
+        japanese.stop().slideUp();
+      }else{
+        english.stop().slideUp();
+        japanese.stop().slideDown();
+      }
+    }
+  }, 'li.wordComplete');
+
   $('#new_word').on("click", function(){
     var user_id = $('button#new_word').attr("data-user_id");
     var params = {}

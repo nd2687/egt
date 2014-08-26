@@ -1,11 +1,11 @@
 $(function (){
-  var url   = location.href;
-  params    = url.split("?");
+  var url = location.href;
+  params = url.split("?");
   if( params.length === 1 ){
     $('#normalSort').css('color', 'red');
     $('#englishSort').css('color', 'red');
   }else{
-    paramms   = params[1].split("&");
+    paramms = params[1].split("&");
 
     var paramArray = [];
     for ( i = 0; i < paramms.length; i++ ) {
@@ -45,11 +45,11 @@ $(function (){
 
     if(paramArray["complete_type"] === "complete"){
       $('#completeSort').css('color', 'red');
-      $('body').find('li.word').css('background', 'blue');
+      $('li.word').css('color', 'white');
     };
   };
 
-  $("button.sortButton").on('click', function(){
+  $("body").on('click', 'button.sortButton', function(){
     var sortType = $(this).attr('data-sort-type');
     var wordType = $(this).attr('data-word-type');
     var completeType = $(this).attr('data-complete-type');

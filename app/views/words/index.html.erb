@@ -10,7 +10,7 @@
   <% if @words.present? %>
     <% @words.each do |word| %>
     <ul class="wordUl" id="<%= word.id %>">
-      <li class="word" id="<%= word.id %>">
+      <li class="<%= params[:complete_type] == "complete" ? "wordComplete" : "word" %>" id="<%= word.id %>">
         <div class="english" style="<%= params[:word_type] == 'ja' ? 'display:none;' : '' %>">
           <%= word.english %>
         </div>
@@ -48,8 +48,8 @@
   <% end %>
 
   <% if params[:sort_type].present? %>
-    <%= pageless(@words.total_pages, root_path + "?sort_type="  + params[:sort_type] + "&word_type=" + params[:word_type]) %>
+    <%= pageless(@words.total_pages, root_path + "?sort_type="  + params[:sort_type] + "&word_type=" + params[:word_type] + "&complete_type=" + params[:complete_type]) %>
   <% else %>
-    <%= pageless(@words.total_pages, root_path + "?word_type=#{params[:word_type]}") %>
+    <%= pageless(@words.total_pages, root_path + "?word_type=#{params[:word_type]}" + "&complete_type=#{params[:complete_type]}") %>
   <% end %>
 </div>

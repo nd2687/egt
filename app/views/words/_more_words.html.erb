@@ -1,7 +1,7 @@
 <div class="words" data-word-type="<%= params[:word_type] %>">
   <% @words.each do |word| %>
   <ul class="wordUl" id="<%= word.id %>">
-    <li class="word" id="<%= word.id %>">
+    <li class="<%= params[:complete_type] == "complete" ? "wordComplete" : "word" %>" id="<%= word.id %>">
       <div class="english" style="<%= params[:word_type] == 'ja' ? 'display:none;' : '' %>">
         <%= word.english %>
       </div>

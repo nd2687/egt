@@ -17,6 +17,20 @@ ul.wordUl {
       top: 12px;
     }
   }
+  li.wordComplete {
+    color: white;
+    width: 200px;
+    height: 50px;
+    background: #88c857;
+    list-style: none;
+    div.japanese, div.english {
+      width: 200px;
+      height: 25px;
+      text-align: center;
+      position: relative;
+      top: 12px;
+    }
+  }
   li.menu {
     width: 200px;
     height: 25px;
@@ -41,4 +55,7 @@ ul.wordUl {
     padding: 0;
     margin: 0;
   }
+}
+li.complete {
+  color: white;
 }
