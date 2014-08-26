@@ -1,21 +1,33 @@
-.deleteWord {
-  background-color: #EEE;
-  color: #3e68bb;
+.deleteWord, .completeWord, .editDialog {
+  border: 2px solid #333;
+  background: #EEE;
+  border-top: 1px solid #DDD;
+  border-left: 1px solid #DDD;
+  border-right: 1px solid #BBB;
+  border-bottom: 1px solid #BBB;
+  color:#111;
+  cursor: pointer;
 }
-.deleteWord:hover {
-  letter-spacing: 5px;
+.deleteWord:hover, .completeWord:hover, .editDialog:hover {
+  background-color: #fff;
+  border-color: #59b1eb;
+  color: #59b1eb;
 }
-.completeWord {
-  background-color: #EEE;
-  color: #3e68bb;
+.deleteWord::before, .completeWord::before, .editDialog::before,
+.deleteWord::after, .completeWord::after, .editDialog::after {
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #333;
 }
-.completeWord:hover {
-  letter-spacing: 5px;
+.deleteWord::before, .completeWord::before, .editDialog::before {
+  right: 0;
 }
-.editDialog {
-  background-color: #EEE;
-  color: #3e68bb;
+.deleteWord::after, .completeWord::after, .editDialog::after {
+  left: 0;
 }
-.editDialog:hover {
-  letter-spacing: 5px;
+.deleteWord:hover::before, .completeWord:hover::before, .editDialog:hover::before,
+.deleteWord:hover::after, .completeWord:hover::after, .editDialog:hover::after {
+  width: 0;
+  background-color: #59b1eb;
 }
