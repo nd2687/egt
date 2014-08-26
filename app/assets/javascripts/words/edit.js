@@ -37,7 +37,7 @@ $(function(){
   });
   $(".ui-dialog-titlebar").hide();
 
-  $('body').on('click', 'button#editDialog', function(){
+  $('body').on('click', '.editDialog', function(){
     var word_id = $(this).parent('.menuWord').attr('data-word_id');
     $("#editwordForm" + word_id).dialog(opt).dialog("open");
     $(".ui-dialog-titlebar").hide();

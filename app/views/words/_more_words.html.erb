@@ -11,13 +11,15 @@
     </li>
     <li class="menu">
       <div class="menuWord" style="display:none;" data-word_id="<%= word.id %>">
-        <%= link_to "検索", "#" %>
+        <!--
+        <button class="urlWord">URL</button>
+        -->
 
         <% unless params[:complete_type] == "complete" %>
           <button class="completeWord">完了</button>
         <% end %>
 
-        <button id="editDialog">編集</button>
+        <button class="editDialog">編集</button>
 
         <div id="editwordForm<%= word.id %>" style="display:none;">
           <%= form_for(:word, url: word_path(id: word.id),
@@ -29,7 +31,7 @@
           <button class="editWordSubmits" id="editwordSubmit<%= word.id %>" data-word_id="<%= word.id %>">更新</button>
         </div>
 
-        <button id="deleteWord">削除</button>
+        <button class="deleteWord">削除</button>
       </div>
     </li>
   </ul>

@@ -17,7 +17,7 @@ $(function(){
   });
   $(".ui-dialog-titlebar").hide();
 
-  $('body').on('click', 'button#deleteWord', function(){
+  $('body').on('click', '.deleteWord', function(){
     var word_id = $(this).parent('.menuWord').attr('data-word_id');
 
     $.ajax({
