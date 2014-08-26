@@ -19,7 +19,7 @@ $(function (){
 
   $("body").on({
     'mouseenter':function(){
-      var wordType = $('div.words').first().attr('data-word-type');
+      var wordType = $('.words').first().attr('data-word-type');
       var english = $(this).children('.english');
       var japanese = $(this).children('.japanese');
       $(this).css('cursor', 'pointer').css('background', '#a3d57c');
@@ -32,7 +32,7 @@ $(function (){
       }
     },
     'mouseleave':function(){
-      var wordType = $('div.words').first().attr('data-word-type');
+      var wordType = $('.words').first().attr('data-word-type');
       var english = $(this).children('.english');
       var japanese = $(this).children('.japanese');
       $(this).css('cursor', 'pointer').css('background', '');
@@ -44,11 +44,11 @@ $(function (){
         japanese.stop().slideDown();
       }
     }
-  }, 'li.word');
+  }, '.word');
 
   $("body").on({
     'mouseenter':function(){
-      var wordType = $('div.words').first().attr('data-word-type');
+      var wordType = $('.words').first().attr('data-word-type');
       var english = $(this).children('.english');
       var japanese = $(this).children('.japanese');
       $(this).css('cursor', 'pointer').css('background', '#a3d57c');
@@ -61,7 +61,7 @@ $(function (){
       }
     },
     'mouseleave':function(){
-      var wordType = $('div.words').first().attr('data-word-type');
+      var wordType = $('.words').first().attr('data-word-type');
       var english = $(this).children('.english');
       var japanese = $(this).children('.japanese');
       $(this).css('cursor', 'pointer').css('background', '');
@@ -73,10 +73,10 @@ $(function (){
         japanese.stop().slideDown();
       }
     }
-  }, 'li.wordComplete');
+  }, '.wordComplete');
 
   $('#new_word').on("click", function(){
-    var user_id = $('button#new_word').attr("data-user_id");
+    var user_id = $('#new_word').attr("data-user_id");
     var params = {}
     params['english'] = $('input#word_english').val();
     params['japanese'] = $('input#word_japanese').val();
@@ -106,14 +106,14 @@ $(function (){
           //  ul.slideDown();
 
           $( "#newwordSuccess" ).dialog( "open" );
-          $('div.newForm').find('input#word_english').val('');
-          $('div.newForm').find('input#word_japanese').val('');
+          $('.newForm').find('input#word_english').val('');
+          $('.newForm').find('input#word_japanese').val('');
           //  $('div#ajax_english').slideDown(1100);
           //}else{
           //}
-          var str_count = $('body').find('span#newWordCount').text();
+          var str_count = $('body').find('#newWordCount').text();
           var count = Number(str_count);
-          $('span#newWordCount').text(count+1);
+          $('#newWordCount').text(count+1);
         }else if(data[0] === false){
           data.shift();
           var errors = data;

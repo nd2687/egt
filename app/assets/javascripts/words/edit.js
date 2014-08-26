@@ -45,8 +45,8 @@ $(function(){
   $('body').on('click', '.editWordSubmits', function(){
     var word_id = $(this).attr('data-word_id');
     var params = {}
-    params['english'] = $('div#editwordForm' + word_id).find('input#word_english').val();
-    params['japanese'] = $('div#editwordForm' + word_id).find('input#word_japanese').val();
+    params['english'] = $('#editwordForm' + word_id).find('input#word_english').val();
+    params['japanese'] = $('#editwordForm' + word_id).find('input#word_japanese').val();
     params['word_id'] = word_id;
 
     $.ajax({
@@ -65,8 +65,8 @@ $(function(){
         }else{
           $("#editwordForm" + word_id).dialog(opt).dialog("close");
           $( "#editwordSuccess" ).dialog( "open" );
-          $('body').find('ul#'+params['word_id']).children('li#'+params['word_id']).children('div.english').text(params['english']);
-          $('body').find('ul#'+params['word_id']).children('li#'+params['word_id']).children('div.japanese').text(params['japanese']);
+          $('body').find('ul#'+params['word_id']).children('li#'+params['word_id']).children('.english').text(params['english']);
+          $('body').find('ul#'+params['word_id']).children('li#'+params['word_id']).children('.japanese').text(params['japanese']);
         }
         return false;
       }

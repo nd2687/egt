@@ -27,9 +27,9 @@ $(function(){
       success: function(data){
         $('body').find('ul#'+ word_id).hide('slow');
         $( "#completewordSuccess" ).dialog( "open" );
-        var str_count = $('body').find('span#completeCount').text();
+        var str_count = $('body').find('#completeCount').text();
         var count = Number(str_count);
-        $('span#completeCount').text(count+1);
+        $('#completeCount').text(count+1);
       }
     });
     return false;

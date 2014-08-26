@@ -27,9 +27,9 @@ $(function(){
       success: function(data){
         $( "#deletewordSuccess" ).dialog( "open" );
         $('body').find('ul#'+word_id).fadeOut('slow');
-        var str_count = $('body').find('span#newWordCount').text();
+        var str_count = $('body').find('#newWordCount').text();
         var count = Number(str_count);
-        $('span#newWordCount').text(count-1);
+        $('#newWordCount').text(count-1);
       }
     })
   })

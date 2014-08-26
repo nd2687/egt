@@ -45,7 +45,7 @@ $(function (){
 
     if(paramArray["complete_type"] === "complete"){
       $('#completeSort').css('color', '#3e68bb');
-      $('li.word').css('color', 'white');
+      $('.word').css('color', 'white');
     };
   };
 
