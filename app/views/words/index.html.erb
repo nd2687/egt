@@ -53,3 +53,7 @@
     <%= pageless(@words.total_pages, root_path + "?word_type=#{params[:word_type]}" + "&complete_type=#{params[:complete_type]}") %>
   <% end %>
 </div>
+
+<div id="page-top">
+  <p><a id="move-page-top">▲</a></p>
+</div>
