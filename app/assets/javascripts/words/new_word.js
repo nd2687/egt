@@ -88,29 +88,25 @@ $(function (){
       data: params,
       success: function(data){
         if(data.length && $.isArray(data) && data[0] !== false){
-          //var wordType = $('div.words').first().attr('data-word-type');
-          //var words = data;
-          //$('html,body').animate({ scrollTop: 0 }, 'fast');
-          //var ul = $('<ul class="wordUl" style="display:none;">');
-          //var list = ul.append('<li class="word" style="display:none;">');
-          //var nesting_en = list
-          //  .append('<div class="english" style="display:none;" id="ajax_english">' + words[0] + '</div>')
-          //  .append('<div class="japanese" style="display:none;">' + words[1] + '</div>');
-          //var nesting_ja = list
-          //  .append('<div class="english" style="display:none;" id="ajax_english">' + words[0] + '</div>')
-          //  .append('<div class="japanese" style="display:none;">' + words[1] + '</div>');
-          ////alert($('body').find('ul').length);
-          ////$('body').find('ul:first').prepend(nesting);
-          //if(wordType !== "ja"){
-          //  $('body').find('div.words:not(:hidden)').prepend(nesting_en);
-          //  ul.slideDown();
-
-          $( "#newwordSuccess" ).dialog( "open" );
+          var wordType = $('.words').first().attr('data-word-type');
+          var words = data;
+          var ul = $('<ul class="wordUl" id=' + data[2] + ' style="display:none;">');
+          var list = $('<li class="word" id=' + data[2] + '>');
+          if(wordType !== "ja"){
+          var nesting_en = list.append('<div class="english" style="display:none;" id="ajax_english">' + words[0] + '</div>')
+            .append('<div class="japanese" style="display:none;">' + words[1] + '</div>');
+            $('body').find('div.words:not(:hidden)').prepend(ul.append(nesting_en));
+            $('div#ajax_english').slideDown(1100);
+          }else{
+          var nesting_ja = list.append('<div class="english" style="display:none;">' + words[0] + '</div>')
+            .append('<div class="japanese" style="display:none;" id="ajax_japanese">' + words[1] + '</div>');
+            $('body').find('div.words:not(:hidden)').prepend(ul.append(nesting_ja));
+            $('div#ajax_japanese').slideDown(1100);
+          }
+          ul.slideDown();
+          $( "#newwordSuccess" ).parent().css({position:"fixed"}).end().dialog( "open" );
           $('.newForm').find('input#word_english').val('');
           $('.newForm').find('input#word_japanese').val('');
-          //  $('div#ajax_english').slideDown(1100);
-          //}else{
-          //}
           var str_count = $('body').find('#newWordCount').text();
           var count = Number(str_count);
           $('#newWordCount').text(count+1);

@@ -8,7 +8,7 @@ class WordsController < ApplicationController
     @word = current_user.words.new(user_id: params[:user_id],
                      english: params[:english], japanese: params[:japanese])
     if @word.save
-      render json: [ @word.english, @word.japanese ]
+      render json: [ @word.english, @word.japanese, @word.id ]
     else
       render json: (@word.errors.present? ? ([false] + @word.errors.full_messages.uniq) : [])
     end

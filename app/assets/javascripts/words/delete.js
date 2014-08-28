@@ -25,7 +25,7 @@ $(function(){
       type: 'DELETE',
       data: 'JSON',
       success: function(data){
-        $( "#deletewordSuccess" ).dialog( "open" );
+        $( "#deletewordSuccess" ).parent().css({position:"fixed"}).end().dialog( "open" );
         $('body').find('ul#'+word_id).fadeOut('slow');
         var str_count = $('body').find('#newWordCount').text();
         var count = Number(str_count);

@@ -64,7 +64,7 @@ $(function(){
           alert(error);
         }else{
           $("#editwordForm" + word_id).dialog(opt).dialog("close");
-          $( "#editwordSuccess" ).dialog( "open" );
+          $( "#editwordSuccess" ).parent().css({position:"fixed"}).end().dialog( "open" );
           $('body').find('ul#'+params['word_id']).children('li#'+params['word_id']).children('.english').text(params['english']);
           $('body').find('ul#'+params['word_id']).children('li#'+params['word_id']).children('.japanese').text(params['japanese']);
         }

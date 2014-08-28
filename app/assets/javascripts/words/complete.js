@@ -26,7 +26,7 @@ $(function(){
       data: "JSON",
       success: function(data){
         $('body').find('ul#'+ word_id).hide('slow');
-        $( "#completewordSuccess" ).dialog( "open" );
+        $( "#completewordSuccess" ).parent().css({position:"fixed"}).end().dialog( "open" );
         var str_count = $('body').find('#completeCount').text();
         var count = Number(str_count);
         $('#completeCount').text(count+1);
