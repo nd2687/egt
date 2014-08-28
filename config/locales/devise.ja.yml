@@ -1,56 +1,56 @@
 ja:
   devise:
     confirmations:
-      confirmed: "アカウントが確認されました。ログインしています。"
-      send_instructions: "アカウントの確認方法を数分以内にメールでご連絡します。"
-      send_paranoid_instructions: "ご登録のメールアドレスが保存されている場合、アカウントの確認方法をメールでご連絡します。"
+      confirmed: アカウントを登録しました。
+      send_instructions: 登録方法を数分以内にメールでご連絡します。
+      send_paranoid_instructions: メールアドレスが登録されていれば、数分以内にアカウントを確認する方法が記載されているメールが届きます。
     failure:
-      already_authenticated: "既にログインしています。"
-      inactive: "Your account is not activated yet."
-      invalid: "Invalid email or password."
-      locked: "アカウントがロックされています。"
-      last_attempt: "あなたのアカウントがロックされる前に、もう1つの試みを持っています。"
-      not_found_in_database: "メールアドレスまたはパスワードが無効です。"
-      timeout: "一定時間が経過したため、再度ログインが必要です"
-      unauthenticated: "ログインまたは登録が必要です。"
-      unconfirmed: "本登録を行ってください。"
+      already_authenticated: 既にログインしています。
+      inactive: アカウントが有効化されていません。
+      invalid: メールアドレスまたはパスワードが違います。
+      last_attempt: あと一回間違えるとアカウントが凍結されます。
+      locked: アカウントが凍結されています。
+      not_found_in_database: メールアドレスまたはパスワードが違います。
+      timeout: セッションがタイムアウトしました。もう一度ログインしてください。
+      unauthenticated: 続けるにはログインまたはアカウントを登録してください。
+      unconfirmed: 本登録を行ってください。
     mailer:
       confirmation_instructions:
-        subject: "アカウントの登録方法"
+        subject: アカウントの登録方法
       reset_password_instructions:
-        subject: "パスワードの再設定"
+        subject: パスワードの再設定
       unlock_instructions:
-        subject: "アカウントのロック解除"
+        subject: アカウントの凍結解除
     omniauth_callbacks:
-      failure: "%{kind} から承認されませんでした。理由：%{reason}"
-      success: "%{kind} から承認されました。"
+      failure: 「%{reason}」のため、%{kind}による認証ができませんでした。
+      success: '%{kind}による認証に成功しました。'
     passwords:
-      no_token: "このページにアクセスする事が出来ません。正しいURLでアクセスしている事を確認して下さい。"
-      send_instructions: "パスワードのリセット方法を数分以内にメールでご連絡します。"
-      send_paranoid_instructions: ""
-      updated: "パスワードを変更しました。"
-      updated_not_active: "パスワードを変更しました。"
+      no_token: パスワード再設定のメール以外からこのページへアクセスする事はできません。もしパスワード再設定のメールに記載されたリンクをクリックしてこのページへ訪れた場合、不完全なURLのリンクをクリックしていないか確認してください。メーラーによっては、リンクのURLが途中で切れる可能性があります。
+      send_instructions: パスワードの再設定方法を数分以内にメールでご連絡します。
+      send_paranoid_instructions: メールアドレスが登録されていれば、数分以内にパスワード再設定のメールが届きます。
+      updated: パスワードを変更し、ログインしました。
+      updated_not_active: パスワードを変更しました。
     registrations:
-      destroyed: "アカウントを削除しました。またのご利用をお待ちしております。"
-      signed_up: "アカウント登録を受け付けました。"
-      signed_up_but_inactive: "アカウントは登録されていますが、アクティブになっていないため利用できません。"
-      signed_up_but_locked: "アカウントは登録されていますが、ロックされているため利用できません。"
-      signed_up_but_unconfirmed: "確認メールを登録したメールアドレス宛に送信しました。リンクを開いてアカウントを有効にして下さい。"
-      update_needs_confirmation: "アカウント情報が更新されました。更新の確認メールを新しいメールアドレス宛に送信しましたので、リンクを開いて更新を有効にして下さい。"
-      updated: "アカウントが更新されました。"
+      destroyed: アカウントを削除しました。またのご利用をお待ちしております。
+      signed_up: アカウント登録を受け付けました。
+      signed_up_but_inactive: 登録に成功しました。しかし、アカウントが有効になっていないためログインできません。
+      signed_up_but_locked: 登録に成功しました。しかし、アカウントがロックされているためログインできません。
+      signed_up_but_unconfirmed: アカウント確認のリンクが入っているメールを送りました。 メール内のリンクでアカウントを有効にしてください。
+      update_needs_confirmation: アカウント情報を変更しました。しかし、メールアドレスを確認する必要があります。メール内のリンクで新しいメールアドレスを確認してください。
+      updated: アカウント情報を更新しました。
     sessions:
-      signed_in: "ログインしました。"
-      signed_out: "ログアウトしました。"
+      already_signed_out:
+        signed_in: ログインしました。
+        signed_out: ログアウトしました。
     unlocks:
-      send_instructions: "アカウントのロックを解除する方法を数分以内にメールでご連絡します。"
-      send_paranoid_instructions: "アカウントが存在する場合、ロックを解除する方法をメールでご連絡します。"
-      unlocked: "アカウントのロックが解除されました。ログインしています。"
+      send_instructions: アカウントの凍結解除方法を数分以内にメールでご連絡します。
+      send_paranoid_instructions: アカウントが登録されていれば、数分以内にアカウントの凍結解除方法が登録しているアドレスに届きます。
+      unlocked: アカウントを凍結解除しました。続けるにはログインしてください。
   errors:
     messages:
-      already_confirmed: "は既に登録済みです。ログインしてください"
-      confirmation_period_expired: "%{period}以内に確認する必要がありますので、新しくリクエストしてください。"
-      expired: "有効期限切れです。新規登録してください。"
-      not_found: "は見つかりませんでした。"
-      not_locked: "ロックされていません。"
-      not_saved:
-        one: "エラーにより、この %{resource} を保存できません："
+      already_confirmed: は既に登録済みです
+      confirmation_period_expired: は%{period}以内に確認が必要です。もう一度要求してください。
+      expired: は期限が切れたため、新しく取得する必要があります
+      not_found: は見つかりませんでした
+      not_locked: は凍結されていません
+      not_saved: '%{count}個のエラーにより%{resource}を保存することができませんでした。'
