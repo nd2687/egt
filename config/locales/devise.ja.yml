@@ -40,8 +40,8 @@ ja:
       updated: アカウント情報を更新しました。
     sessions:
       already_signed_out:
-        signed_in: ログインしました。
-        signed_out: ログアウトしました。
+      signed_in: ログインしました。
+      signed_out: ログアウトしました。
     unlocks:
       send_instructions: アカウントの凍結解除方法を数分以内にメールでご連絡します。
       send_paranoid_instructions: アカウントが登録されていれば、数分以内にアカウントの凍結解除方法が登録しているアドレスに届きます。
