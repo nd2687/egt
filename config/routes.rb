@@ -14,4 +14,6 @@ Rails.application.routes.draw do
     :omniauth_callbacks => "users/omniauth_callbacks"
   }
 
+  get "*anything" => "home#not_found"
+
 end
