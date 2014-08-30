@@ -28,3 +28,10 @@ gem 'annotate', :git => 'https://github.com/ctran/annotate_models'
 gem 'will_paginate', '~> 3.0'
 
 gem 'rails-i18n'
+
+group :development do
+  gem 'capistrano', '~> 2.15.5'
+  gem "capistrano-unicorn", require: false
+  gem 'capistrano-rbenv'
+end
+gem 'unicorn'
