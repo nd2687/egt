@@ -32,5 +32,6 @@ gem 'rails-i18n'
 group :development do
   gem 'capistrano', '~> 2.15.5'
   gem "capistrano-unicorn", require: false
+  gem 'capistrano-rbenv'
 end
 gem 'unicorn'
