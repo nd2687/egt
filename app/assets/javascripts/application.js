@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.ui.all
 //= require_tree .
 //= require angular
 //= require_tree ./angular
+//= require_tree ./application
+//= require_tree ./words
+//= require_tree ./vendor

@@ -1,0 +1,39 @@
+<div class="words" data-word-type="<%= params[:word_type] %>">
+  <% @words.each do |word| %>
+  <ul class="wordUl" id="<%= word.id %>">
+    <li class="<%= params[:complete_type] == "complete" ? "wordComplete" : "word" %>" id="<%= word.id %>">
+      <div class="english" style="<%= params[:word_type] == 'ja' ? 'display:none;' : '' %>">
+        <%= word.english %>
+      </div>
+      <div class="japanese" style="<%= params[:word_type] == 'ja' ? '' : 'display:none;' %>">
+        <%= word.japanese %>
+      </div>
+    </li>
+    <li class="menu">
+      <div class="menuWord" style="display:none;" data-word_id="<%= word.id %>">
+        <!--
+        <button class="urlWord">URL</button>
+        -->
+
+        <% unless params[:complete_type] == "complete" %>
+          <button class="completeWord">完了</button>
+        <% end %>
+
+        <button class="editDialog">編集</button>
+
+        <div id="editwordForm<%= word.id %>" style="display:none;">
+          <%= form_for(:word, url: word_path(id: word.id),
+                       :method => :patch, remote: true, id: "editForm") do |f| %>
+            <%= f.text_field :english, placeholder: "English", value: word.english %><br>
+            <%= f.text_field :japanese, placeholder: "日本語", value: word.japanese %><br>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+          <% end %>
+          <button class="editWordSubmits" id="editwordSubmit<%= word.id %>" data-word_id="<%= word.id %>">更新</button>
+        </div>
+
+        <button class="deleteWord">削除</button>
+      </div>
+    </li>
+  </ul>
+  <% end %>
+</div>

@@ -1,0 +1,61 @@
+<%= render 'shared/form.html.erb' %>
+
+<div id="newwordSuccess" style="display:none;">データを追加しました！</div>
+<div id="completewordSuccess" style="display:none;">データを完了へ移行しました！</div>
+<div id="editwordSuccess" style="display:none;">データを更新しました！</div>
+<div id="deletewordSuccess" style="display:none;">データを削除しました！</div>
+
+
+<div class="words" data-word-type="<%= params[:word_type] %>">
+  <% if @words.present? %>
+    <% @words.each do |word| %>
+    <ul class="wordUl" id="<%= word.id %>">
+      <li class="<%= params[:complete_type] == "complete" ? "wordComplete" : "word" %>" id="<%= word.id %>">
+        <div class="english" style="<%= params[:word_type] == 'ja' ? 'display:none;' : '' %>">
+          <%= word.english %>
+        </div>
+        <div class="japanese" style="<%= params[:word_type] == 'ja' ? '' : 'display:none;' %>">
+          <%= word.japanese %>
+        </div>
+      </li>
+      <li class="menu">
+        <div class="menuWord" style="display:none;" data-word_id="<%= word.id %>">
+          <!--
+          <button class="urlWord">URL</button>
+          -->
+
+          <% unless params[:complete_type] == "complete" %>
+            <button class="completeWord">完了</button>
+          <% end %>
+
+          <button class="editDialog">編集</button>
+
+          <div id="editwordForm<%= word.id %>" style="display:none;">
+            <%= form_for(:word, url: word_path(id: word.id),
+                         :method => :patch, remote: true, id: "editForm") do |f| %>
+              <%= f.text_field :english, placeholder: "English", value: word.english %><br>
+              <%= f.text_field :japanese, placeholder: "日本語", value: word.japanese %><br>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+            <% end %>
+            <button class="editWordSubmits" id="editwordSubmit<%= word.id %>" data-word_id="<%= word.id %>">更新</button>
+          </div>
+
+          <button class="deleteWord">削除</button>
+        </div>
+      </li>
+    </ul>
+    <% end %>
+  <% else %>
+    <h1>上のコントロールパネルから英単語を登録しよう！</h1>
+  <% end %>
+
+  <% if params[:sort_type].present? %>
+    <%= pageless(@words.total_pages, root_path + "?sort_type="  + params[:sort_type] + "&word_type=" + params[:word_type] + "&complete_type=" + params[:complete_type]) %>
+  <% else %>
+    <%= pageless(@words.total_pages, root_path + "?word_type=#{params[:word_type]}" + "&complete_type=#{params[:complete_type]}") %>
+  <% end %>
+</div>
+
+<div id="page-top">
+  <p><a id="move-page-top">▲</a></p>
+</div>

@@ -1,0 +1,7 @@
+<%= link_to "Tweet","https://twitter.com/share", class: "twitter-share-button",
+  data: { url: "http://localhost:3000", text: "【英単語超】自由に英単語を登録して、反復して見返すことで英単語の意味を理解するウェブサービスです!", via: "tkwn1"} %>
+
+<%= link_to "http://b.hatena.ne.jp/entry/http://localhost:3000", title: "このエントリーをはてなブックマークに追加", class: "hatena-bookmark-button",
+      data: { hatena_bookmark_title: "【英単語超】自由に英単語を登録して、反復して見返すことで英単語の意味を理解するウェブサービスです!", hatena_bookmark_layout: "standard-balloon", hatena_bookmark_lang: "ja"} do %>
+<%= image_tag("http://b.st-hatena.com/images/entry-button/button-only@2x.png", alt: "このエントリーをはてなブックマークに追加", width: 20, height: 20, style: "border: none;") %>
+<% end %>
