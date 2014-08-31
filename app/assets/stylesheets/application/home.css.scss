@@ -59,3 +59,25 @@ ul.wordUl {
 li.complete {
   color: white;
 }
+a.navbar-link {
+  text-decoration: none;
+  border: 2px solid #333;
+  background: #EEE;
+  border-top: 1px solid #DDD;
+  border-left: 1px solid #DDD;
+  border-right: 1px solid #BBB;
+  border-bottom: 1px solid #BBB;
+  color:#111;
+  cursor: pointer;
+}
+.sessionSupport a {
+  text-decoration: none;
+  border: 2px solid #333;
+  background: #EEE;
+  border-top: 1px solid #DDD;
+  border-left: 1px solid #DDD;
+  border-right: 1px solid #BBB;
+  border-bottom: 1px solid #BBB;
+  color:#111;
+  cursor: pointer;
+}

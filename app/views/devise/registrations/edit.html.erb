@@ -18,7 +18,7 @@
   <% end %>
 
   <tr>
-    <td><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></td>
+    <td><%= f.label :password %></td>
     <td><%= f.password_field :password, autocomplete: "off" %></td>
   </tr>
 
@@ -28,11 +28,12 @@
   </tr>
 
   <tr>
-    <td><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i></td>
+    <td><%= f.label :current_password %></td>
     <td><%= f.password_field :current_password, autocomplete: "off" %></td>
   </tr>
 
   <tr>
+    <td></td>
     <td><%= f.submit "Update" %></td>
   </tr>
 <% end %>
@@ -42,5 +43,5 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :root %>
+<%= link_to "Back", :root, id: "back" %>
 </div>
