@@ -107,6 +107,7 @@ $(function (){
           $( "#newwordSuccess" ).parent().css({position:"fixed"}).end().dialog( "open" );
           $('.newForm').find('input#word_english').val('');
           $('.newForm').find('input#word_japanese').val('');
+          ('#firstMessage').hide('fast');
           var str_count = $('body').find('#newWordCount').text();
           var count = Number(str_count);
           $('#newWordCount').text(count+1);
