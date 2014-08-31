@@ -84,7 +84,10 @@ a.navbar-link {
 #siteFooter {
   width: 100%;
   float: none;
+  position: absolute; /* 絶対位置指定することを定義 */
+  bottom: 0px;
   margin: 0 auto;
+  text-align: center;
   text-decoration: none;
   color: rgba(0,0,0,0.6);
   text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
