@@ -85,6 +85,7 @@ a.navbar-link {
   width: 100%;
   float: none;
   position: absolute; /* 絶対位置指定することを定義 */
+  position:fixed;
   bottom: 0px;
   margin: 0 auto;
   text-align: center;

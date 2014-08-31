@@ -1,7 +1,7 @@
 1.upto(10000) do |idx|
   word = Word.new(
-    english: "taro#{idx}",
-    japanese: "太郎",
+    english: "example#{idx}",
+    japanese: "テスト",
     user_id: 1,
     complete: idx%2 == 0
   )
