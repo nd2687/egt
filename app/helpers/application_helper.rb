@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   def check_twitter(email)
-    if email.include?("example.com")
+    if current_user.provider == "twitter"
       email = "Twitter Authentication"
     else
       email
