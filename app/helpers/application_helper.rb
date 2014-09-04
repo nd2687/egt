@@ -8,4 +8,12 @@ module ApplicationHelper
     container && opts[:container] ||= container
     javascript_tag("$('div.words').pageless(#{opts.to_json});")
   end
+
+  def check_twitter(email)
+    if email.include?("example.com")
+      email = "Twitter Authentication"
+    else
+      email
+    end
+  end
 end

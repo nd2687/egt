@@ -28,10 +28,10 @@
       <%# end -%>
 
     <div id="omniFacebook">
-      <%= link_to(image_tag("facebook.jpg"), user_omniauth_authorize_path(:facebook)) %>
+      <%= link_to(image_tag("facebook.jpg"), user_omniauth_authorize_path(:facebook), sns: true) %>
     </div>
     <div id="omniTwitter">
-      <%= link_to(image_tag("twitter.jpg"), user_omniauth_authorize_path(:twitter)) %>
+      <%= link_to(image_tag("twitter.jpg"), user_omniauth_authorize_path(:twitter), sns: true) %>
     </div>
     <% end -%>
   <% end %>

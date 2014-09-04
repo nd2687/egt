@@ -16,8 +16,10 @@
 
   <p class="navbar-text pull-right">
   <% if user_signed_in? %>
-    <strong><%= current_user.email %></strong>
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+    <strong><%= check_twitter(current_user.email) %></strong>
+    <% unless params[:sns] %>
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+    <% end %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete,
       :class => 'navbar-link' %>
   <% else %>
