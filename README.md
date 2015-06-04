@@ -1,5 +1,6 @@
 English translate
 ==================
+![egt-demo](https://raw.github.com/wiki/totoman/egt/images/egt-demo2.gif)  
   
   
 概要
