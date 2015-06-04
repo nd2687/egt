@@ -1,10 +1,8 @@
 English translate
 ==================
-![egt-demo](https://raw.github.com/wiki/totoman/egt/images/egt-demo2.gif)  
-  
-  
-概要
-----
+## Demo(1min)
+![egt-demo](https://raw.github.com/wiki/totoman/egt/images/egt-demo2.gif)
+## Overview
 英単語の学習効率を上げることを目的としたアプリケーションです。  
 ネットサーフィンしている時など、調べた英単語をそのままにせずに  
 その都度このアプリケーションに英単語と和訳を登録します。  
@@ -13,10 +11,7 @@ English translate
   
 Twitter、Facebook、Email-Passwordで登録・ログインができます。  
   
-  
-使い方
-------
-### ファイル ###
+## Usage
 `config/initializers/devise.rb`  
 `config/secrets.yml`  
 `config/database.yml`  
@@ -25,18 +20,11 @@ Twitter、Facebook、Email-Passwordで登録・ログインができます。
 その際、Twitter認証、Facebook認証の準備を進めてください。  
   
   
-### 注意 ###
-~~angular.js が入っておりますが一切使っておりません。~~  
-~~(時間があるときに削除しておきます。)~~  
-  
-  
-バージョン情報
-----
+## Version
 Ruby 2.1.2  
 Rails 4.1.4  
 Devise 3.2.4(bundle updateした際のバージョンでは動作未確認)  
   
   
-ライセンス
-------
+## Licence
 Copyright &copy; 2014 tkwn
