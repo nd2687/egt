@@ -1,7 +1,7 @@
 English translate
 ==================
 ## Demo(1min)
-![egt-demo](https://raw.github.com/wiki/totoman/egt/images/egt-demo2.gif)
+![egt-demo](https://raw.github.com/wiki/totoman/egt/images/egt-demo2.gif)  
 ## Overview
 英単語の学習効率を上げることを目的としたアプリケーションです。  
 ネットサーフィンしている時など、調べた英単語をそのままにせずに  
